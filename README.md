@@ -1,22 +1,43 @@
 # algogrand_workshop
 
-Welcome to your new AlgoKit project!
 
-This is your workspace root. A `workspace` in AlgoKit is an orchestrated collection of standalone projects (backends, smart contracts, frontend apps and etc).
-
-By default, `projects_root_path` parameter is set to `projects`. Which instructs AlgoKit CLI to create a new directory under `projects` directory when new project is instantiated via `algokit init` at the root of the workspace.
-
-## Getting Started
-
-To get started refer to `README.md` files in respective sub-projects in the `projects` directory.
-
-To learn more about algokit, visit [documentation](https://github.com/algorandfoundation/algokit-cli/blob/main/docs/algokit.md).
-
-### GitHub Codespaces
-
-To get started execute:
-
-1. `algokit generate devcontainer` - invoking this command from the root of this repository will create a `devcontainer.json` file with all the configuration needed to run this project in a GitHub codespace. [Run the repository inside a codespace](https://docs.github.com/en/codespaces/getting-started/quickstart) to get started.
-2. `algokit init` - invoke this command inside a github codespace to launch an interactive wizard to guide you through the process of creating a new AlgoKit project
 
 Powered by [Copier templates](https://copier.readthedocs.io/en/stable/).
+# 🍔 Favorite Food dApp (Algorand Smart Contract)
+
+## 📌 Project Description
+This project is a simple **Favorite Food Logger** built on the Algorand blockchain using TypeScript.  
+It’s designed as a beginner-friendly example of how to write and deploy Algorand smart contracts, making it perfect for developers who are just getting started with Algorand dApps.  
+
+The idea is simple: users can set and retrieve their favorite food on-chain.  
+
+---
+
+## ✅ What it does
+- Allows users to **set their favorite food** on the Algorand blockchain.  
+- Lets anyone **retrieve the stored favorite food** from the smart contract.  
+- Demonstrates how to use **GlobalState** in Algorand smart contracts with TypeScript.  
+
+---
+
+## ✨ Features
+- 🛠 **Beginner-friendly codebase** — easy to read and extend.  
+- 🍕 **Favorite food logger** — log your favorite food in a decentralized way.  
+- 🌍 **Deployed on Algorand** — secure, transparent, and immutable.  
+- 📖 **Educational example** — shows how to build a minimal dApp on Algorand.  
+
+---
+
+## 🔗 Deployed Smart Contract
+👉 [View Smart Contract on Algorand Explorer](XXX)
+
+---
+
+## 💻 Smart Contract Code
+
+```typescript
+//paste your code
+<img width="1746" height="892" alt="image" src="https://github.com/user-attachments/assets/3cb68c11-9bce-42c9-aef7-d357376e2da6" />
+https://lora.algokit.io/testnet/application/745463379
+
+
