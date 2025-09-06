@@ -33,11 +33,5 @@ The idea is simple: users can set and retrieve their favorite food on-chain.
 
 ---
 
-## 💻 Smart Contract Code
-
-```typescript
-//paste your code
-<img width="1746" height="892" alt="image" src="https://github.com/user-attachments/assets/3cb68c11-9bce-42c9-aef7-d357376e2da6" />
-https://lora.algokit.io/testnet/application/745463379
-
+<img width="1714" height="881" alt="Screenshot 2025-09-06 151922" src="https://github.com/user-attachments/assets/bcf96238-c153-4545-aaa5-617d51d89361" />
 
