@@ -1,0 +1,123 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 1 0
+    bytecblock "food" 0x151f7c75
+    txn ApplicationID
+    bnz main_after_if_else@2
+    // smart_contracts/hello_world/contract.algo.ts:6
+    // food = GlobalState<string>({ key: "food", initialValue: "Not set yet" })
+    bytec_0 // "food"
+    pushbytes "Not set yet"
+    app_global_put
+
+main_after_if_else@2:
+    // smart_contracts/hello_world/contract.algo.ts:4
+    // export class FavoriteFood extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@9
+    pushbytess 0x1e9ea9db 0xf716ebb2 // method "setFavoriteFood(string)string", method "getFavoriteFood()string"
+    txna ApplicationArgs 0
+    match main_setFavoriteFood_route@5 main_getFavoriteFood_route@6
+
+main_after_if_else@13:
+    // smart_contracts/hello_world/contract.algo.ts:4
+    // export class FavoriteFood extends Contract {
+    intc_1 // 0
+    return
+
+main_getFavoriteFood_route@6:
+    // smart_contracts/hello_world/contract.algo.ts:15
+    // getFavoriteFood(): string {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getFavoriteFood
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_setFavoriteFood_route@5:
+    // smart_contracts/hello_world/contract.algo.ts:9
+    // setFavoriteFood(foodName: string): string {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/hello_world/contract.algo.ts:4
+    // export class FavoriteFood extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/hello_world/contract.algo.ts:9
+    // setFavoriteFood(foodName: string): string {
+    callsub setFavoriteFood
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_bare_routing@9:
+    // smart_contracts/hello_world/contract.algo.ts:4
+    // export class FavoriteFood extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@13
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_0 // 1
+    return
+
+
+// smart_contracts/hello_world/contract.algo.ts::FavoriteFood.setFavoriteFood(foodName: bytes) -> bytes:
+setFavoriteFood:
+    // smart_contracts/hello_world/contract.algo.ts:9
+    // setFavoriteFood(foodName: string): string {
+    proto 1 1
+    // smart_contracts/hello_world/contract.algo.ts:6
+    // food = GlobalState<string>({ key: "food", initialValue: "Not set yet" })
+    bytec_0 // "food"
+    // smart_contracts/hello_world/contract.algo.ts:10
+    // this.food.value = foodName
+    frame_dig -1
+    app_global_put
+    // smart_contracts/hello_world/contract.algo.ts:11
+    // return `Favorite food set to: ${foodName}`
+    pushbytes "Favorite food set to: "
+    frame_dig -1
+    concat
+    retsub
+
+
+// smart_contracts/hello_world/contract.algo.ts::FavoriteFood.getFavoriteFood() -> bytes:
+getFavoriteFood:
+    // smart_contracts/hello_world/contract.algo.ts:6
+    // food = GlobalState<string>({ key: "food", initialValue: "Not set yet" })
+    intc_1 // 0
+    bytec_0 // "food"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/hello_world/contract.algo.ts:16
+    // return this.food.value
+    retsub
