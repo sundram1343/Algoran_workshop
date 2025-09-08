@@ -29,7 +29,6 @@ The idea is simple: users can set and retrieve their favorite food on-chain.
 ---
 
 ## 🔗 Deployed Smart Contract
-👉 [View Smart Contract on Algorand Explorer](XXX)
 
 ---
 
