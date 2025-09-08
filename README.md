@@ -34,4 +34,5 @@ The idea is simple: users can set and retrieve their favorite food on-chain.
 ---
 
 <img width="1714" height="881" alt="Screenshot 2025-09-06 151922" src="https://github.com/user-attachments/assets/bcf96238-c153-4545-aaa5-617d51d89361" />
+https://lora.algokit.io/testnet/application/745463379
 
